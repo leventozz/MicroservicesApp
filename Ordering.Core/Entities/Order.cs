@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Ordering.Core.Entities.Base;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace Basket.API.Entities
+namespace Ordering.Core.Entities
 {
-    public class BasketCheckout
+    public class Order : Entity
     {
         public string Username { get; set; }
         public decimal TotalPrice { get; set; }
