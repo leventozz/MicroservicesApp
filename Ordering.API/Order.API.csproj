@@ -12,9 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ordering.Application\Ordering.Application.csproj" />
-    <ProjectReference Include="..\Ordering.Core\Ordering.Core.csproj" />
-    <ProjectReference Include="..\Ordering.Infrastructure\Ordering.Infrastructure.csproj" />
+    <ProjectReference Include="..\Ordering.Application\Order.Application.csproj" />
+    <ProjectReference Include="..\Ordering.Core\Order.Core.csproj" />
+    <ProjectReference Include="..\Ordering.Infrastructure\Order.Infrastructure.csproj" />
   </ItemGroup>
 
 

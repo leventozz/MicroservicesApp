@@ -17,15 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4243D1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBusRabbitMQ", "EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{8A7560FF-E610-43A1-8C05-8E6BAD4AA67E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{4384BFD6-622A-4819-B8AA-D8222D8AFE74}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{4384BFD6-622A-4819-B8AA-D8222D8AFE74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.API", "Ordering.API\Ordering.API.csproj", "{2EB8420E-86AF-4A0C-93D0-72525495E9CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.API", "Ordering.API\Order.API.csproj", "{2EB8420E-86AF-4A0C-93D0-72525495E9CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Core", "Ordering.Core\Ordering.Core.csproj", "{59C7B978-8A03-416A-865C-662D38B69EAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Core", "Ordering.Core\Order.Core.csproj", "{59C7B978-8A03-416A-865C-662D38B69EAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Infrastructure", "Ordering.Infrastructure\Ordering.Infrastructure.csproj", "{79D2B46F-936F-45B7-9485-9C145AED6BDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Infrastructure", "Ordering.Infrastructure\Order.Infrastructure.csproj", "{79D2B46F-936F-45B7-9485-9C145AED6BDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Application", "Ordering.Application\Ordering.Application.csproj", "{F54129C7-1598-4DC6-8E79-7C966B15B6F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Application", "Ordering.Application\Order.Application.csproj", "{F54129C7-1598-4DC6-8E79-7C966B15B6F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
