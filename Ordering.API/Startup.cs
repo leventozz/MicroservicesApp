@@ -1,16 +1,14 @@
 using AutoMapper;
 using EventBusRabbitMQ;
-using EventBusRabbitMQ.Producer;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Order.API.Extensions;
 using Order.API.RabbitMQ;
 using Order.Application.Handlers;
 using Ordering.Core.Repositories;
@@ -19,11 +17,7 @@ using Ordering.Infrastructure.Data;
 using Ordering.Infrastructure.Repositories;
 using Ordering.Infrastructure.Repositories.Base;
 using RabbitMQ.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Ordering.API
 {
@@ -41,11 +35,11 @@ namespace Ordering.API
         {
             services.AddControllers();
             services.AddDbContext<OrderContext>(x => x.UseSqlServer(Configuration.GetConnectionString("OrderConnection")), ServiceLifetime.Singleton);
-            services.AddAutoMapper(typeof(Startup));
-            services.AddMediatR(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly);
-            services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IOrderRepository), typeof(OrderRepository));
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddAutoMapper(typeof(Startup));
+            services.AddMediatR(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly);
             services.AddSwaggerGen(x =>
             {
                 x.SwaggerDoc("v1", new OpenApiInfo { Title = "Order API", Version = "v1" });
@@ -84,6 +78,9 @@ namespace Ordering.API
             {
                 endpoints.MapControllers();
             });
+
+            app.UseRabbitListener();
+
             app.UseSwagger();
             app.UseSwaggerUI(x =>
             {
